@@ -1,3 +1,32 @@
-public class Main{
-    public static long 
+import java.util.Scanner;
+
+public class PnC {
+    public static long factorial(int n){
+        int fact=1;
+        for(int i=1;i<=n;i++){
+            fact*=i;
+
+        }
+        return fact;
+    }
+
+        public static long permutation(int n,int r){
+            return factorial(n)/factorial(n-r);
+        }
+
+        public static long combination(int n,int r){
+            return factorial(n)/factorial(r)*factorial(n-r);
+        }
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Enter n: ");
+        int n = sc.nextInt();
+          System.out.println("Enter r: ");
+        int r = sc.nextInt();
+        
+      
+        System.out.println("Permutation is: "+permutation(n, r));
+        System.out.println("Combination is: "+combination(n, r));
+
+    }
 }
